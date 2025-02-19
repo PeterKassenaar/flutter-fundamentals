@@ -16,7 +16,7 @@ void main() {
                 fontWeight: FontWeight.bold,
                 letterSpacing: 2,
                 color: Colors.green[800],
-                fontFamily: 'BungeeOutline'
+                fontFamily: 'BungeeOutline' // defined in pubspec.yaml and in ./fonts (it is a free Google Fonts font).
               ),
             )
         ),
