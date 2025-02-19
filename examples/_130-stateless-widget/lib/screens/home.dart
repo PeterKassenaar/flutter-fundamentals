@@ -13,7 +13,7 @@ class Home extends StatelessWidget {
       ),
       body: Center(
           child: Text(
-            'My First Flutter app',
+            'My First Flutter app - I am now a StatelessWidget',
             style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,

@@ -13,9 +13,9 @@ class Home extends StatelessWidget {
       ),
       body: Center(
         // Network Image
-        // child: Image(
-        //   image: NetworkImage('https://images.unsplash.com/photo-1560807707-8cc77767d783?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=675&q=80')
-        // )
+        child: Image(
+          image: NetworkImage('https://images.unsplash.com/photo-1560807707-8cc77767d783?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=675&q=80')
+        )
         // Local Image - see also pubspec.yaml
         // child: Image(
         //   image: AssetImage('assets/puppy-3.jpg')
@@ -23,7 +23,7 @@ class Home extends StatelessWidget {
         // OR: simply use the image Shortcuts
         // child: Image.network(
         //     'https://images.unsplash.com/photo-1601979031925-424e53b6caaa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'),
-         child: Image.asset('assets/puppy-2.jpg'),
+        //  child: Image.asset('assets/puppy-2.jpg'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
