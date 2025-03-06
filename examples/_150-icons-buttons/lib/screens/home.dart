@@ -13,14 +13,13 @@ class Home extends StatelessWidget {
       ),
       body: Center(
         // 1. A simple ElevatedButton with some styling. Also see TextButton, OutlinedButton
-          child: ElevatedButton(
-              onPressed: () {
-                print(
-                    'You clicked the ElevatedButton'); // See IntelliJ-console!
-              },
-              child: Text('click me'),
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.green[600])
-          )
+        child: ElevatedButton(
+          onPressed: () {
+            print('You clicked the ElevatedButton'); // See IntelliJ-console!
+          },
+          child: Text('click me', style: TextStyle(color: Colors.white)),
+          style: ElevatedButton.styleFrom(backgroundColor: Colors.green[600]),
+        ),
         // 2. An elevated icon button - notice the different properties
         // child: ElevatedButton.icon(
         //   onPressed: () {
@@ -29,10 +28,10 @@ class Home extends StatelessWidget {
         //   icon: Icon(Icons.mail),
         //   label: Text('Mail me'),
         // )
-        // 3. An IconButton is a pressable Icon.
+        // 3. An IconButton is a pressable Icon (it doesn't LOOK like a button, but it is one).
         // child: IconButton(
         //   onPressed: () {
-        //     print('you clicked the IconButton');
+        //     print('you clicked the @-IconButton');
         //   },
         //   icon: Icon(Icons.alternate_email),
         //   color: Colors.green[600],
