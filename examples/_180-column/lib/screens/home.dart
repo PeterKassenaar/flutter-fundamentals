@@ -14,25 +14,29 @@ class Home extends StatelessWidget {
       // 1. Column Widget. A Column can also have an array of children. They are all widgets
       body: Column(
         // 2. Experiment with the alignment of the Column. Axises are now reversed!
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          // children inside the Widget array. This is child 1.
           Container(
             padding: EdgeInsets.all(20.0),
             color: Colors.blueGrey,
             child: Text('one'),
           ),
+
+          //..child 2
           Container(
             padding: EdgeInsets.all(30.0),
             color: Colors.black26,
             child: Text('two'),
           ),
+
+          //..child 3
           Container(
             padding: EdgeInsets.all(40.0),
             color: Colors.lightGreen,
             child: Text('three'),
           ),
-
         ],
       ),
       floatingActionButton: FloatingActionButton(
