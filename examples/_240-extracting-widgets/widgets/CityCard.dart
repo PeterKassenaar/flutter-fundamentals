@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:first_flutter_app/model/City.dart';
 
+import '../models/City.dart';
 // The widget is now in its own file. It can be reused in the application
+
 class CityCard extends StatelessWidget {
-  // use the 'final' keyword to let Dart know the variable is not going to change inside this widget
+  // 1. Use the 'final' keyword to let Dart know the variable is not going to change inside this widget
   final City city;
 
-  // constructor - receiving the passed in city.
-  CityCard({this.city});
+  // 2. Constructor - receiving the passed in city and assigning it to the local variable `city`.
+  // It can not be null, hence the keyword `required`.
+  CityCard({required this.city});
 
+  // 3. The build() function that returns the actual Card() widget.
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -18,30 +21,29 @@ class CityCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Text(city.name,
-                style: TextStyle(fontSize: 18, color: Colors.grey[800])),
-            SizedBox(
-              height: 12,
+            Text(
+              city.name,
+              style: TextStyle(fontSize: 18, color: Colors.grey[800]),
             ),
+            SizedBox(height: 12),
             Row(
               children: [
                 Text(
-                  '${city.country}',
+                  city.country,
                   style: TextStyle(fontSize: 12, color: Colors.grey[600]),
                 ),
-                // conditional rendering of a part of the widget tree.
-                // Note the (weird, IMO) notation of  ...[] if we want to group multiple Widgets
+                // *Conditional rendering* of a part of the widget tree.
+                // Note the (weird, IMO) notation of  ...[] if we want to group multiple Widgets.
+                // It is called the Spread-operator.
                 if (city.population != -1) ...[
-                  SizedBox(
-                    width: 10,
-                  ),
+                  SizedBox(width: 10),
                   Text(
                     '(${city.population})',
                     style: TextStyle(fontSize: 12, color: Colors.grey[400]),
-                  )
-                ]
+                  ),
+                ],
               ],
-            )
+            ),
           ],
         ),
       ),

@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:first_flutter_app/model/City.dart';
-
-// import the extracted widget and (re)use it in the list
-import 'package:first_flutter_app/widgets/CityCard.dart';
+import '../models/City.dart'; // update path for your situation
+import '../widgets/CityCard.dart'; // The extracted widget
 
 class CityList extends StatefulWidget {
   @override
-  _CityListState createState() => _CityListState();
+  CityListState createState() => CityListState();
 }
 
-class _CityListState extends State<CityList> {
+class CityListState extends State<CityList> {
   // Our list is now an array of City objects (not just strings anymore).
   /// We need to compose the instances correctly.
   List<City> cities = [
@@ -22,7 +20,6 @@ class _CityListState extends State<CityList> {
 
   @override
   Widget build(BuildContext context) {
-    cities.map((e) => print(e));
     return Scaffold(
         appBar: AppBar(
           title: Text('List of cities'),
@@ -31,9 +28,11 @@ class _CityListState extends State<CityList> {
           backgroundColor: Colors.blueGrey[500],
         ),
         body: Column(
-          // We now call the CityCard custom widget directly.
+          // We now call the cityTemplate function, which returns a Card() widget.
           // The current city is passed in as a parameter
-          children: cities.map((city) => CityCard(city: city)).toList(),
-        ));
+          children: cities.map((city) => CityCard(city: city,)).toList(),
+        )
+    );
   }
 }
+
