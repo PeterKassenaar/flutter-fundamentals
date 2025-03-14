@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:first_flutter_app/model/City.dart';
+import '../models/City.dart'; // update path for your situation
 
 class CityList extends StatefulWidget {
   @override
-  _CityListState createState() => _CityListState();
+  CityListState createState() => CityListState();
 }
 
-class _CityListState extends State<CityList> {
+class CityListState extends State<CityList> {
   // Our list is now an array of City objects (not just strings anymore).
   /// We need to compose the instances correctly.
   List<City> cities = [
@@ -17,8 +17,9 @@ class _CityListState extends State<CityList> {
     City(id: 5, name: 'Tokyo', country: 'JP', population: 1800000),
   ];
 
-  // We call this function for each city and it returns a Card widget with the
+  // We call this function for *each city* and it returns a Card widget with the
   // properties of the city inside.
+  // A separate function is often more readable than all inline code.
   Widget cityTemplate(City city) {
     return Card(
       margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
@@ -38,8 +39,9 @@ class _CityListState extends State<CityList> {
                   '${city.country}',
                   style: TextStyle(fontSize: 12, color: Colors.grey[600]),
                 ),
-                // conditional rendering of a part of the widget tree.
-                // Note the (weird, IMO) notation of  ...[] if we want to group multiple Widgets
+                // *Conditional rendering* of a part of the widget tree.
+                // Note the (weird, IMO) notation of  ...[] if we want to group multiple Widgets.
+                // It is called the Spread-operator.
                 if (city.population != -1) ...[
                   SizedBox(
                     width: 10,
@@ -71,6 +73,7 @@ class _CityListState extends State<CityList> {
           // We now call the cityTemplate function, which returns a Card() widget.
           // The current city is passed in as a parameter
           children: cities.map((city) => cityTemplate(city)).toList(),
-        ));
+        )
+    );
   }
 }
