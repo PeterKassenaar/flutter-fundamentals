@@ -6,7 +6,8 @@ class ColorMixer extends StatefulWidget {
 }
 
 class _ColorMixerState extends State<ColorMixer> {
-  // the RGB color variables
+  // the RGB color variables, used in various `setState()` functions
+  // and in the big color Container() on the page.
   int red = 255;
   int green = 0;
   int blue = 0;
@@ -55,41 +56,66 @@ class _ColorMixerState extends State<ColorMixer> {
               ],
             ),
             // Red slider
-            Slider(
-                value: red.toDouble(),
-                min: 0,
-                max: 255,
-                label: red.toString(),
-                onChanged: (double value) {
-                  setState(() {
-                    red = value.floor();
-                  });
-                }),
+            Row(
+              children: [
+                Text('R:'),
+                SizedBox(width: 10,),
+                Expanded(
+                  child: Slider(
+                      value: red.toDouble(),
+                      min: 0,
+                      max: 255,
+                      label: red.toString(),
+                      onChanged: (double value) {
+                        setState(() {
+                          red = value.floor();
+                        });
+                      }),
+                ),
+              ],
+            ),
             // Green slider
-            Slider(
-                value: green.toDouble(),
-                min: 0,
-                max: 255,
-                label: green.toString(),
-                onChanged: (double value) {
-                  setState(() {
-                    green = value.floor();
-                  });
-                }),
+            Row(
+              children: [
+                Text('G:'),
+                SizedBox(width: 10,),
+                Expanded(
+                  child: Slider(
+                      value: green.toDouble(),
+                      min: 0,
+                      max: 255,
+                      label: green.toString(),
+                      onChanged: (double value) {
+                        setState(() {
+                          green = value.floor();
+                        });
+                      }),
+                ),
+              ],
+            ),
             // Blue slider
-            Slider(
-                value: blue.toDouble(),
-                min: 0,
-                max: 255,
-                label: blue.toString(),
-                onChanged: (double value) {
-                  setState(() {
-                    blue = value.floor();
-                  });
-                }),
+            Row(
+              children: [
+                Text('B:'),
+                SizedBox(width: 10,),
+                Expanded(
+                  child: Slider(
+                      value: blue.toDouble(),
+                      min: 0,
+                      max: 255,
+                      label: blue.toString(),
+                      onChanged: (double value) {
+                        setState(() {
+                          blue = value.floor();
+                        });
+                      }),
+                ),
+              ],
+            ),
+            // The container with the big, colored box.
             Expanded(
               child: Container(
-                color: Color.fromRGBO(red, green, blue, opacity),
+                color: Color.fromRGBO(red, green, blue, opacity), // using the `red`, `green` and `blue` variables from the sliders `setState()` above
                 child: Text(
                   'Color...',
                   style: TextStyle(),
@@ -100,7 +126,7 @@ class _ColorMixerState extends State<ColorMixer> {
             // Opacity slider
             Row(
               children: [
-                Text('opacity:'),
+                Text('Opacity:'),
                 Expanded(
                   child: Slider(
                       value: opacity,
