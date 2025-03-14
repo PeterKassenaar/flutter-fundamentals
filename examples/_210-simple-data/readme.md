@@ -1,6 +1,7 @@
 # Simple Data
 
-This is a single file. Place it in a simple project and point to the main class from your `myApp()`.
+This is a single file containing the techniques described in this module. 
+Place it in a simple project and point to the main class from your `myApp()`.
 
 For example:
 ````dart
