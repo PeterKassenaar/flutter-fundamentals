@@ -16,6 +16,7 @@ class _HomeState extends State<Home> {
   // 2. Lifecycle hook - it initializes our data
   @override
   void initState() {
+    super.initState();
     getPerson();
   }
 
@@ -24,14 +25,14 @@ class _HomeState extends State<Home> {
   void getPerson() {
     name = 'mario';
     occupation = 'Plumber, savior of princesses';
-    image = 'assets/$name.png';
+    image = 'img/$name.png';
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: new Text('Async operations'),
+        title: Text('Async operations'),
         centerTitle: true,
         backgroundColor: Colors.blue[800],
       ),

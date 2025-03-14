@@ -16,6 +16,7 @@ class _HomeAsyncState extends State<HomeAsync> {
   // 2. Lifecycle hook - it initializes our data
   @override
   void initState() {
+    super.initState();
     getPerson();
     // 2a. We can also do that by setting the name, occupation and image
     // in separate functions (see 3a. and 3b.).
@@ -44,7 +45,7 @@ class _HomeAsyncState extends State<HomeAsync> {
     setState(() {
       name;
       occupation;
-      image = 'assets/$name.png';
+      image = 'img/$name.png';
     });
   } // getPerson
 
@@ -56,13 +57,14 @@ class _HomeAsyncState extends State<HomeAsync> {
     });
     setState(() {
       name;
-      image = 'assets/$name.png';
+      image = 'img/$name.png';
     });
   }
 
-  // 3a. Get (only) the occupation  async
+  // 3a. Get (only) the occupation  async. We show a spinner icon
+  // (see build() method) as long as the occupation Future is not resolved.
   void getOccupation() async {
-    occupation = await Future.delayed(Duration(seconds: 1), () {
+    occupation = await Future.delayed(Duration(seconds: 6), () {
       return 'Plumber, savior of princesses';
     });
     setState(() {
@@ -88,19 +90,29 @@ class _HomeAsyncState extends State<HomeAsync> {
             child: Text(
               '$name',
               style: TextStyle(
-                  fontSize: 32, color: Colors.grey[600], letterSpacing: 2),
+                fontSize: 32,
+                color: Colors.grey[600],
+                letterSpacing: 2,
+              ),
             ),
           ),
+          // Display a spinner while `occupation` is loading, else show the occupation
           Container(
             padding: EdgeInsets.all(10.0),
             color: Colors.lightBlue[200],
-            child: Text(
-              '$occupation',
-              style: TextStyle(
-                  fontSize: 24, color: Colors.grey[600], letterSpacing: 2),
-            ),
+            child:
+                occupation.isEmpty
+                    ? Center(child: CircularProgressIndicator())
+                    : Text(
+                      occupation,
+                      style: TextStyle(
+                        fontSize: 24,
+                        color: Colors.grey[600],
+                        letterSpacing: 2,
+                      ),
+                    ),
           ),
-          if (image != '') Expanded(child: Image.asset(image))
+          if (image != '') Expanded(child: Image.asset(image)),
         ],
       ),
     );
