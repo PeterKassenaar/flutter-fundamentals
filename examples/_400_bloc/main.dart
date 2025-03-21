@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'bloc/counterBloc.dart';
-import 'screens/counterPage.dart';
+import 'package:flutter_example/screens/counterPageMulti.dart';
+import 'bloc/counter_bloc.dart';
+import 'screens/counter_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,9 @@ class MyApp extends StatelessWidget {
       // 1. Using MultiBlocProvider() here instead of BlocProvider(), as in bigger
       // applications you often need multiple providers, one for each piece of state.
       home: MultiBlocProvider(
-        providers: [BlocProvider(create: (context) => CounterBloc())],
+        providers: [
+          BlocProvider(create: (context) => CounterBloc())
+        ],
         child: const CounterPage(), // CounterPage now has acces to all state in CounterBloc() provider
       ),
     );
