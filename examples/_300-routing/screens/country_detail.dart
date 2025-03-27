@@ -12,8 +12,6 @@ class _CountryDetailState extends State<CountryDetail> {
   //************************* UI
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Country details'),
@@ -23,7 +21,9 @@ class _CountryDetailState extends State<CountryDetail> {
       ),
       body: Column(
         children: [
-          Text('Showing country details....')
+          Text('TODO: Show country details....')
+          // Next up: fetching details from the route and doing an additional request
+          // to load specific country data.
         ],
       ),
     );
