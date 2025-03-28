@@ -28,7 +28,7 @@ void main() {
 
   // 5. Create a person, based on a class  (see below)
   Person p = Person('Peter', 56, 'info@kassenaar.com');
-  print (p.sayHi()); // invoke method
+  print(p.sayHi()); // invoke method
 
   // 6. Sound null safety
   var i = 42; // Inferred to be an int.
@@ -40,11 +40,49 @@ void main() {
   // 8. Using enums, by calling a function (see below)
   showWarning();
 
-  // 9. Collections - here, creating a List (e.g. an array)
+  // 9. Collections - here, creating a List (e.g. compare to JavaScript array).
+  // A List is an ordered collections with zero-based indexing.
   List<String> fruits = ['Apple', 'Pear', 'Banana'];
-  for(var fruit in fruits){
+  for (var fruit in fruits) {
     print(fruit);
   }
+
+  // 10. Collections: Map
+  Map<String, int> ages = {
+    'Alice': 30,
+    'Bob': 25,
+    'Charlie': 40,
+  };
+
+  // Access items in a map
+  print(ages['Alice']); // 30
+
+  // Add item to a map
+  ages['Dave'] = 28;
+
+  // Iterate over map key/values
+  ages.forEach((key, value) {
+    print('$key is $value years old');
+  });
+
+  // Check existence of item in a Map
+  print(ages.containsKey('Bob')); // true
+
+  // Remove items from a Map
+  ages.remove('Charlie');
+
+  // Get keys and values
+  print(ages.keys); // (Alice, Bob, Dave)
+  print(ages.values); // (30, 25, 28)
+
+  // 11. If you want the Values of a map to be anything/variable, annotate as this:
+  Map<String, dynamic> persons = {
+    'Alice': 30,
+    'Bob': 'Engineer',
+    'Charlie': {'age': 40, 'hobby': 'golf'}
+  };
+
+
 }
 
 // Example of a Dart class
@@ -74,10 +112,11 @@ class Person {
 
 // 8. Enums, Defining the Enum
 enum LogLevel { info, warning, error }
-void showWarning(){
+
+void showWarning() {
   LogLevel level = LogLevel.warning;
   String message = 'The log level is set to: ${level.name}';
-  print (message);
+  print(message);
 }
 
 
