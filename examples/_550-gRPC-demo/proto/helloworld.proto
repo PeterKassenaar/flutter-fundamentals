@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package helloworld;
+
+// The greeting service definition.
+service Greeter {
+  // This is the SayHello() method. It takes a HelloRequest as parameter from
+  // the client and returns a HelloReply from the server.
+
+  // This method sends a greeting.
+  // It is called from main.dart via stub.SayHello(...) on line #44.
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+
+  // We now define a SECOND method, that returns another greeting
+  rpc SayHelloAagain(HelloRequest) returns (HelloReply){  }
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+  string message = 1;
+}

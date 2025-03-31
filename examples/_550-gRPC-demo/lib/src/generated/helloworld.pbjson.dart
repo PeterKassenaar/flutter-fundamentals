@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: helloworld.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -22,8 +22,8 @@ const HelloRequest$json = {
 };
 
 /// Descriptor for `HelloRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List helloRequestDescriptor =
-    $convert.base64Decode('CgxIZWxsb1JlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZQ==');
+final $typed_data.Uint8List helloRequestDescriptor = $convert.base64Decode(
+    'CgxIZWxsb1JlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZQ==');
 
 @$core.Deprecated('Use helloReplyDescriptor instead')
 const HelloReply$json = {
@@ -34,5 +34,6 @@ const HelloReply$json = {
 };
 
 /// Descriptor for `HelloReply`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List helloReplyDescriptor = $convert
-    .base64Decode('CgpIZWxsb1JlcGx5EhgKB21lc3NhZ2UYASABKAlSB21lc3NhZ2U=');
+final $typed_data.Uint8List helloReplyDescriptor = $convert.base64Decode(
+    'CgpIZWxsb1JlcGx5EhgKB21lc3NhZ2UYASABKAlSB21lc3NhZ2U=');
+
