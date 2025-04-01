@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_example/screens/about.dart';
 import 'package:flutter_example/screens/countries/countries_favorites.dart';
+import 'package:flutter_example/screens/navigationrail_example.dart';
 
 // Import our bloc-elements
 import 'screens/countries/bloc/countries_bloc.dart';
@@ -17,20 +18,21 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  // 1. This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => CountriesBloc()..add(FetchCountries()),
       child: MaterialApp(
-        // The Bottom navigation bar now holds the Scaffold() that wraps all pages/screens
+        // 2. The Bottom navigation bar now holds the Scaffold() that wraps all pages/screens
+        // 3. Replace with  home: const NavigationRailExample() if you want a NavigationRail for your navigation instead of a bottom bar.
         home: const BottomNavBar(),
       ),
     );
   }
 }
 
-// The bottom navigation bar from the app, containing icons for the three screens.
+// 4. The bottom navigation bar from the app, containing icons for the three screens.
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
 
