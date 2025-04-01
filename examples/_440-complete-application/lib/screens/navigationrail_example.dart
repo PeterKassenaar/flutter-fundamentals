@@ -39,6 +39,7 @@ class _NavigationRailExampleState extends State<NavigationRailExample> {
       body: Row(
         children: [
           // 2. NavigationRail widget. It holds all the icons, similar to a BottomNavigationBar().
+          // See for info and possible properties https://api.flutter.dev/flutter/material/NavigationRail-class.html#instance-properties
           NavigationRail(
             selectedIndex: _selectedIndex,
             onDestinationSelected: _onNavigationItemTapped,
@@ -61,6 +62,8 @@ class _NavigationRailExampleState extends State<NavigationRailExample> {
               ),
             ],
           ),
+          // A small vertical bar between the NavigationRail() and the content.
+          VerticalDivider(width: 1, thickness: 1,),
           // 3. Expanded area to show the currently selected page.
           Expanded(
             child: _pages[_selectedIndex],
