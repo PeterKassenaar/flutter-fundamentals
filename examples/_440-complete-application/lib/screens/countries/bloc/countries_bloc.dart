@@ -41,14 +41,14 @@ class CountriesBloc extends Bloc<CountriesEvent, CountriesState> {
     });
 
     // 4. Listen to the ToggleFavorite event
-    on<ToggleFavorite>((ToggleFavorite event, Emitter<CountriesState> emit){
+    on<ToggleFavorite>((event, emit){
       if (state is CountriesLoaded) {
         final currentState = state as CountriesLoaded;
         final favorites = List<Map<String, dynamic>>.from(currentState.favorites);
 
         // 5. Check if the country exists by using .any() and comparing the Common Name.
         // In other applications you would use an ID or Primary Key, or the like (but in
-        // this API the common name is the unique element in a country. It doesn't have an ID or the like).
+        // this API the common name is the unique element in a country. It doesn't have an ID).
         final bool existingCountry = favorites.any(
               (country) =>
           country['name']['common'] == event.country['name']['common'],
