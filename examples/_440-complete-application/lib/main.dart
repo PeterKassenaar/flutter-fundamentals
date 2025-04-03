@@ -61,7 +61,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   // **************** UI of the BottomNavigationBar
   // Workshop: create a variable/list of all items in the navbar, instead of
-  // coding them inline.
+  // coding them inline. Call a function with parameter to build the BottomNavigationBar().
   @override
   Widget build(BuildContext context) {
     return Scaffold(
