@@ -66,6 +66,7 @@ class _ColorMixerState extends State<ColorMixer> {
                       min: 0,
                       max: 255,
                       label: red.toString(),
+                      divisions: 255,
                       onChanged: (double value) {
                         setState(() {
                           red = value.floor();
