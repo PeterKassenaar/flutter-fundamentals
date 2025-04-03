@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/City.dart'; // update path for your situation
+import '../model/City.dart'; // update path for your situation
 
 class CityList extends StatefulWidget {
   @override
@@ -73,6 +73,8 @@ class CityListState extends State<CityList> {
           // We now call the cityTemplate function, which returns a Card() widget.
           // The current city is passed in as a parameter
           children: cities.map((city) => cityTemplate(city)).toList(),
+          // Or, even shorter:
+          // children: cities.map(cityTemplate).toList(),
         )
     );
   }
