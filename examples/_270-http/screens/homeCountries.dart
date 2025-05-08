@@ -82,8 +82,12 @@ class _HomeCountriesState extends State<HomeCountries> {
                         ),
                         title: Text(countries[index]['name']['common']),
                         subtitle: Text(
-                          countries[index]['capital']?.first ??
-                              'No capital found.',
+                          // First: check if there actually IS a list of capital(s) and it is not
+                          // empty, before trying to render the capital
+                          (countries[index]['capital'] is List &&
+                              countries[index]['capital'].isNotEmpty)
+                              ? countries[index]['capital'].first
+                              : 'No capital found.',
                         ),
                         // Optional: retrieve and use more properties
                         // Next up: adding onTap: to do something with the country,
