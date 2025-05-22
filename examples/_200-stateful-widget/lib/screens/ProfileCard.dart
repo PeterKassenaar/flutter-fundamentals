@@ -68,7 +68,7 @@ class _ProfileCardState extends State<ProfileCard> {
               SizedBox(height: 10.0),
               // The actual Name
               Text(
-                cutenessLevel.toInt().toString(),
+                "Level: $cutenessLevel",
                 // convert and display the double as an integer
                 style: TextStyle(
                   color: Colors.amberAccent[200],
@@ -78,16 +78,24 @@ class _ProfileCardState extends State<ProfileCard> {
                 ),
               ),
               SizedBox(height: 10.0),
-              Slider(
-                value: cutenessLevel,
-                min: 0,
-                max: 10,
-                label: cutenessLevel.round().toString(),
-                onChanged: (double value) {
-                  setState(() {
-                    cutenessLevel = value.floorToDouble();
-                  });
-                },
+              // Slider theme, to show a label above the Slider.
+              SliderTheme(
+                data: SliderTheme.of(context).copyWith(
+                  valueIndicatorShape: PaddleSliderValueIndicatorShape(),
+                  showValueIndicator: ShowValueIndicator.always,
+                ),
+                // The actual Slider
+                child: Slider(
+                  value: cutenessLevel,
+                  min: 0,
+                  max: 10,
+                  label: cutenessLevel.round().toString(),
+                  onChanged: (double value) {
+                    setState(() {
+                      cutenessLevel = value.floorToDouble();
+                    });
+                  },
+                ),
               ),
               SizedBox(height: 10.0),
               // A row, b/c we want to display widgets next to each other
