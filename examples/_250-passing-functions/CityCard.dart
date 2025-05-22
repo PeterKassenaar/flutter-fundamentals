@@ -6,7 +6,7 @@ import '../models/City.dart';
 class CityCard extends StatelessWidget {
   // 1. Use the 'final' keyword to let Dart know the variable is not going to change inside this widget
   final City city;
-  final Function delete;
+  final Function(City city) delete; // use strong typing after Function() to make sure the *correct type* of function is passed. This is NOT mandatory. You can type just 'Function delete' if you want, but then you don't have compile-time checking of the function.
 
   // 2. Constructor - receiving the passed in city and assigning it to the local variable `city`.
   // It can not be null, hence the keyword `required`.

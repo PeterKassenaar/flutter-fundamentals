@@ -19,7 +19,7 @@ class CityListState extends State<CityList> {
   ];
 
   // function to remove a city from the array
-  void _deleteCity(city){
+  void _deleteCity(City city){
     setState(() {
       cities.remove(city);
     });
