@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../model/City.dart'; // update path for your situation
+import '../models/City.dart'; // update path for your situation
 
 class CityList extends StatefulWidget {
   @override
