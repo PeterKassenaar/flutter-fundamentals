@@ -14,14 +14,18 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
   //   - setting up listeners and updating the state.
   CounterBloc() : super(CounterState(0)) {
     on<CounterIncrement>((event, emit) {
+      // construct new state
+      var newState = state.count + 1;
       emit(
-        CounterState(state.count + 1),
-      ); // increment the counter
+        CounterState(newState), //create a new instance of the state, using the constructor of <CounterState>
+      );
     });
     on<CounterDecrement>((event, emit) {
+      // construct new state
+      var newState = state.count -1;
       emit(
-        CounterState(state.count - 1),
-      ); // decrement the counter
+        CounterState(newState), //create a new instance of the state, using the constructor of <CounterState>
+      );
     });
     // Workshop: implement a 'Reset' function to reset the counter to 0.
   }
