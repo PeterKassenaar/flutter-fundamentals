@@ -27,6 +27,8 @@ class _HomeCountriesState extends State<HomeCountries> {
   // 3. Get our (all) countries, using async/await notation
   void getCountries() async {
     // 3a. get the response, parse it as a `Uri` object.
+    // This used to be a simple string, but now we have to wrap
+    // it in a `Uri.parse` method.
     Response response = await get(Uri.parse(url + fields));
 
     // 3b. Check if all went allright
