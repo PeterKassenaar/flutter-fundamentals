@@ -22,6 +22,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
+      // Below: the `cascade` or `method chaining` operator, .. (two dots).
+      // This operator allows you to perform multiple operations on the same
+      // object without having to repeatedly reference that object.
+      // It returns the original object, not the result of the method call.
       create: (context) => CountriesBloc()..add(FetchCountries()),
       child: MaterialApp(
         // 2. The Bottom navigation bar now holds the Scaffold() that wraps all pages/screens
