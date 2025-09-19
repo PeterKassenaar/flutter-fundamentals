@@ -51,7 +51,13 @@ class _MyTextCopyState extends State<MyTextCopy> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             TextField(
-              controller: myController,
+              controller: myController, // 1. Using the controller, with the Listener() function
+              // 2. However, simplest approach: using onChanged()
+              // onChanged: (value){
+              //   setState(() {
+              //     text = value;
+              //   });
+              // },
               textAlign: TextAlign.center,
               decoration: const InputDecoration(
                 hintText: 'Type something here',
